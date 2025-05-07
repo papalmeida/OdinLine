@@ -7,7 +7,32 @@
     <link type="text/css" rel="stylesheet" href="../css/bootstrap/bootstrap.css">
 </head>
 <body>
+    <div class="">
+        <nav id="navbar" class="navbar bg-danger px-3 mb-3" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand text-light" href="#">Menu</a>
     
+                <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <img src="../assets/img/sidebar.svg" alt="sideBar-img">
+                </button>
+                
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header bg-danger text-white">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu de Acesso</h5>
+                        <button type="button" class="btn-close text-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <a class="list-group-item list-group-item-action" href="purchases.html">Minhas Compras</a>
+                        <a class="list-group-item list-group-item-action" href="alertPage.html">Alertas</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h1 class="text-center border-bottom border-danger mb-4">Produtos</h1>
+        </div>
+    </div>
     <script type="text/javascript" src="../js/bootstrap/bootstrap.js" ></script>
     <script type="text/javascript" src="../js/jQuery/jquery.js" ></script>
 </body>

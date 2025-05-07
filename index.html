@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autenticação</title>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center border-bottom border-danger mb-4">Autenticação de Usuário</h1>
+        <form id="form" action="#" method="post">
+            <fieldset>
+                <div class="row">
+                    <div class="col-12">
+                        <label class="form-label" for="login">Login</label>
+                        <input class="form-control" id="login" name="login" type="text" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label class="form-label" for="senha">Senha</label>
+                        <input class="form-control" id="senha" name="senha" type="password" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-end mt-3">
+                        <button class="btn btn-success" type="button" onclick="autenticar()">Entrar</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="js/bootstrap/bootstrap.js" ></script>
+    <script type="text/javascript" src="js/jQuery/jquery.js" ></script>
+    <script type="text/javascript" src="js/jQuery/jquery.validate.js"></script>
+    <script type="text/javascript" src="js/jQuery/jquery.mask.js"></script>
+    <script type="text/javascript" src="js/pages/index.js"></script>
+</body>
+</html>

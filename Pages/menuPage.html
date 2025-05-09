@@ -10,16 +10,16 @@
     <div class="">
         <nav id="navbar" class="navbar bg-danger px-3 mb-3" data-bs-theme="dark">
             <div class="container-fluid">
-                <a class="navbar-brand text-light" href="#">Menu</a>
+                <a class="navbar-brand text-light" href="">Menu</a>
     
                 <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                    <img src="../assets/img/sidebar.svg" alt="sideBar-img">
+                    <img src="../assets/img/menu_img.svg" alt="sideBar-img">
                 </button>
                 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                     <div class="offcanvas-header bg-danger text-white">
                         <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu de Acesso</h5>
-                        <button type="button" class="btn-close text-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <a class="list-group-item list-group-item-action" href="purchases.html">Minhas Compras</a>
@@ -30,10 +30,156 @@
         </nav>
 
         <div class="container">
-            <h1 class="text-center border-bottom border-danger mb-4">Produtos</h1>
+            <h1 class="text-center border-bottom border-danger border-2 mb-4">Produtos</h1>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle" id="tabela_produtos">
+                    <thead class="table-danger">
+                        <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Produto</th>
+                        <th scope="col">Valor</th>
+                        <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>
+                                <div class="d-flex align-items-center gap-3">
+                                <img src="https://m.media-amazon.com/images/I/81TjRLHazYL._AC_SL1500_.jpg" alt="Galaxy A14" class="rounded shadow-sm" width="60" height="60" style="object-fit: cover;">
+                                <span>Smartphone Samsung Galaxy A14 128GB</span>
+                                </div>
+                            </td>
+                            <td>R$ 1.299,00</td>
+                            <td>
+                                <button 
+                                type="button"
+                                class="btn btn-sm" 
+                                data-bs-toggle="tooltip" 
+                                data-bs-placement="top"
+                                data-bs-title="Adicionar um alerta"
+                                >🔔</button>
+                                <button 
+                                type="button"
+                                class="btn btn-sm"
+                                data-bs-toggle="tooltip" 
+                                data-bs-placement="top"
+                                data-bs-title="Comprar"
+                                >🛒</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>
+                                <div class="d-flex align-items-center gap-3">
+                                <img src="https://m.media-amazon.com/images/I/61sGqKJv9PL._AC_SL1000_.jpg" alt="Notebook Acer" class="rounded shadow-sm" width="60" height="60" style="object-fit: cover;">
+                                <span>Notebook Acer Aspire 5 Intel i5 8GB 256GB SSD</span>
+                                </div>
+                            </td>
+                            <td>R$ 2.999,00</td>
+                            <td>
+                                <button 
+                                type="button"
+                                class="btn btn-sm" 
+                                data-bs-toggle="tooltip" 
+                                data-bs-placement="top"
+                                data-bs-title="Adicionar um alerta"
+                                >🔔</button>
+                                <button 
+                                type="button"
+                                class="btn btn-sm"
+                                data-bs-toggle="tooltip" 
+                                data-bs-placement="top"
+                                data-bs-title="Comprar"
+                                >🛒</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>
+                                <div class="d-flex align-items-center gap-3">
+                                <img src="https://m.media-amazon.com/images/I/61NIsUGl+FL._AC_SL1500_.jpg" alt="JBL Tune 510BT" class="rounded shadow-sm" width="60" height="60" style="object-fit: cover;">
+                                <span>Fone de Ouvido Bluetooth JBL Tune 510BT</span>
+                                </div>
+                            </td>
+                            <td>R$ 249,90</td>
+                            <td>
+                                <button 
+                                type="button"
+                                class="btn btn-sm" 
+                                data-bs-toggle="tooltip" 
+                                data-bs-placement="top"
+                                data-bs-title="Adicionar um alerta"
+                                >🔔</button>
+                                <button 
+                                type="button"
+                                class="btn btn-sm"
+                                data-bs-toggle="tooltip" 
+                                data-bs-placement="top"
+                                data-bs-title="Comprar"
+                                >🛒</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>
+                                <div class="d-flex align-items-center gap-3">
+                                <img src="https://m.media-amazon.com/images/I/61WZ0FZJgXL._AC_SL1000_.jpg" alt="Cafeteira Philco" class="rounded shadow-sm" width="60" height="60" style="object-fit: cover;">
+                                <span>Cafeteira Elétrica Philco 15 Xícaras</span>
+                                </div>
+                            </td>
+                            <td>R$ 179,90</td>
+                            <td>
+                                <button 
+                                type="button"
+                                class="btn btn-sm" 
+                                data-bs-toggle="tooltip" 
+                                data-bs-placement="top"
+                                data-bs-title="Adicionar um alerta"
+                                >🔔</button>
+                                <button 
+                                type="button"
+                                class="btn btn-sm"
+                                data-bs-toggle="tooltip" 
+                                data-bs-placement="top"
+                                data-bs-title="Comprar"
+                                >🛒</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>
+                                <div class="d-flex align-items-center gap-3">
+                                <img src="https://m.media-amazon.com/images/I/71Yjjk3-5mL._AC_SL1500_.jpg" alt="Smart TV LG" class="rounded shadow-sm" width="60" height="60" style="object-fit: cover;">
+                                <span>Smart TV LG 50&quot; 4K UHD WebOS</span>
+                                </div>
+                            </td>
+                            <td>R$ 2.499,00</td>
+                            <td>
+                                <button 
+                                type="button"
+                                class="btn btn-sm" 
+                                data-bs-toggle="tooltip" 
+                                data-bs-placement="top"
+                                data-bs-title="Adicionar um alerta"
+                                >🔔</button>
+                                <button 
+                                type="button"
+                                class="btn btn-sm"
+                                data-bs-toggle="tooltip" 
+                                data-bs-placement="top"
+                                data-bs-title="Comprar"
+                                >🛒</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>		
+            </div>
         </div>
     </div>
+    <script type="text/javascript" src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap/bootstrap.js" ></script>
     <script type="text/javascript" src="../js/jQuery/jquery.js" ></script>
+    <script type="text/javascript" src="../js/pages/menuPage.js"></script>
 </body>
 </html>

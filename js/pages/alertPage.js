@@ -1,15 +1,18 @@
 function loadProdutos() {
     const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
-
+    
     const listaProdutos = Array.isArray(produtos) ? produtos : [produtos];
-
+    
     listaProdutos.forEach(produto => {
         $("#select_produto").append(`<option value="${produto.id}">${produto.descricao}</option>`);
     });
-
+    
     atualizarTabelaAlertas();
 }
 
+/**
+ * @param {Alerta} alerta 
+ */
 function calcular() {
     const produtoId = $("#select_produto").val();
     const produtoNome = $("#select_produto option:selected").text();
@@ -18,7 +21,12 @@ function calcular() {
 
     if (!produtoId || !valorDesejado || !acao) return;
 
-    const alertas = JSON.parse(localStorage.getItem("alertas")) || [];
+    let alertas;
+    if (localStorage.getItem("alertas")) {
+        alertas = JSON.parse(localStorage.getItem("alertas"));
+    } else {
+        alertas = [];
+    }
 
     if (alertas.some(a => a.id == produtoId)) {
         alert("⚠️ Já existe um alerta para esse produto.");
@@ -31,6 +39,8 @@ function calcular() {
         valorDesejado,
         acao === 2 // true se for "Comprar"
     );
+
+    console.log(alerta);
 
     alertas.push(alerta);
     localStorage.setItem("alertas", JSON.stringify(alertas));
@@ -62,6 +72,8 @@ async function verificarAlertas() {
             if (produto.valor == alerta.valor) {
                 if (alerta.isCompra) {
                     adicionarProdutoCompra(produto);
+
+                    alert(`🛒 Produto "${alerta.nome}" comprado por R$ ${produto.valor.toFixed(2)}!`);
 
                     const novosAlertas = alertas.filter(a => a.id != alerta.id);
                     localStorage.setItem("alertas", JSON.stringify(novosAlertas));
@@ -100,7 +112,7 @@ function atualizarTabelaAlertas() {
                 <td>${alerta.valor.toFixed(2)}</td>
                 <td>${alerta.isCompra ? "Comprar" : "Notificar"}</td>
                 <td>
-                    <button type="button" class="btn btn-danger btn-sm" onclick="excluirAlerta(${alerta.id})">Excluir</button>
+                    <button type="button" class="btn btn-close float-end" aria-label="Close" onclick="excluirAlerta(${alerta.id})"></button>
                 </td>
             </tr>
         `);
@@ -108,10 +120,10 @@ function atualizarTabelaAlertas() {
 }
 
 function excluirAlerta(id) {
-    const alertaId = parseInt(id);
+    const alertaId = String(id);
     let alertas = JSON.parse(localStorage.getItem("alertas")) || [];
 
-    alertas = alertas.filter(alerta => alerta.id !== alertaId);
+    alertas = alertas.filter(alerta => String(alerta.id) !== alertaId);
     localStorage.setItem("alertas", JSON.stringify(alertas));
 
     $(`#alerta-${alertaId}`).remove();

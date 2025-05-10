@@ -38,7 +38,6 @@ function calcular() {
     atualizarTabelaAlertas();
 }
 
-
 async function verificarAlertas() {
     const alertas = JSON.parse(localStorage.getItem("alertas")) || [];
     const user = JSON.parse(localStorage.getItem("user"));
@@ -87,8 +86,6 @@ function adicionarProdutoCompra(produto) {
     
     compras.push(produto);
     localStorage.setItem("compras", JSON.stringify(compras));
-
-    atualizarTabelaCompras();
 }
 
 function atualizarTabelaAlertas() {
@@ -121,23 +118,3 @@ function excluirAlerta(id) {
 }
 
 setInterval(verificarAlertas, 5000);
-
-function atualizarTabelaCompras() {
-    const compras = JSON.parse(localStorage.getItem("compras")) || [];
-    $(".table_compras tbody").empty(); // Limpa a tabela antes de adicionar os produtos
-
-    compras.forEach(produto => {
-        $(".table_compras tbody").append(`
-            <tr>
-                <td>${produto.id}</td>
-                <td>
-                    <div class="d-flex align-items-center gap-3">
-                        <img src="${produto.urlImage}" alt="${produto.descricao}" class="rounded shadow-sm" width="60" height="60" style="object-fit: cover;">
-                        <span>${produto.descricao}</span>
-                    </div>
-                </td>
-                <td>R$ ${produto.valor.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</td>
-            </tr>
-        `);
-    });
-}

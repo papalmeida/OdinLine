@@ -30,7 +30,7 @@ async function autenticar() {
 
             if(usuario.id > 0) {
                 localStorage.setItem('usuarioAutenticado', JSON.stringify(usuario));
-                window.location.href = "menuPage.html";
+                window.location.href = "./pages/menuPage.html";
             } else {
                 alert("Usuário ou senha inválidos.")
             }

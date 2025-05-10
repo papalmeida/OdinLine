@@ -6,11 +6,11 @@
     <title>Alertas</title>
     <link type="text/css" rel="stylesheet" href="../css/bootstrap/bootstrap.css">
 </head>
-<body>
+<body onload="loadProdutos()">
     <div>
         <nav id="navbar" class="navbar bg-danger px-3 mb-3" data-bs-theme="dark">
             <div class="container-fluid">
-                <a class="navbar-brand text-light" href="">Menu</a>
+                <a class="navbar-brand text-light" href="menuPage.html">Menu</a>
     
                 <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                     <img src="../assets/img/menu_img.svg" alt="sideBar-img">
@@ -36,20 +36,17 @@
                     <div class="row mb-3">
                         <div class="col-md-4">
                             <label class="form-label" for="valor">Produto</label>
-                            <select class="form-select" aria-label="Default select example" required>
+                            <select id="select_produto" class="form-select" aria-label="Default select example" required>
                                 <option disabled selected>Selecione um produto</option>
-                                <option value="1">Produto 1</option>
-                                <option value="2">Produto 2</option>
-                                <option value="3">Produto 3</option>
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <label class="form-label" for="juros">Valor Desejado</label>
-                            <input class="form-control" id="juros" name="juros" type="number" required>
+                            <label class="form-label" for="valor">Valor Desejado</label>
+                            <input class="form-control" id="valor" name="valor" type="number" required>
                         </div>
                         <div class="col-md-4">
-                            <label class="form-label" for="valor">Ação</label>
-                            <select class="form-select" aria-label="Default select example" required>
+                            <label class="form-label" for="action">Ação</label>
+                            <select id="action" class="form-select" aria-label="Default select example" required>
                                 <option disabled selected>Selecione uma ação</option>
                                 <option value="1">Notificar</option>
                                 <option value="2">Comprar</option>
@@ -63,13 +60,13 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-12">
-                            <table class="table table-hover align-middle" id="tabela_produtos">
+                            <table class="table table-hover align-middle" id="tabela_alerta">
                                 <thead class="table-danger">
                                     <tr>
                                     <th scope="col">Produto</th>
                                     <th scope="col">Valor Desejado</th>
                                     <th scope="col">Ação</th>
-                                    </tr>
+                                    <th scope="col"></th>
                                 </thead>
                                 <tbody class="table_alert">
                                 </tbody>
@@ -80,7 +77,8 @@
             </form>
         </div>
     </div>
-    <script type="text/javascript" src="../js/bootstrap/bootstrap.js" ></script>
-    <script type="text/javascript" src="../js/jQuery/jquery.js" ></script>
+    <script src="../js/bootstrap/bootstrap.js" ></script>
+    <script src="../js/jQuery/jquery.js" ></script>
+    <script src="../js/pages/alertPage.js" ></script>
 </body>
 </html>

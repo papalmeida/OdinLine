@@ -7,8 +7,78 @@
     <link type="text/css" rel="stylesheet" href="../css/bootstrap/bootstrap.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Alertas</h1>
+    <div>
+        <nav id="navbar" class="navbar bg-danger px-3 mb-3" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand text-light" href="">Menu</a>
+    
+                <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <img src="../assets/img/menu_img.svg" alt="sideBar-img">
+                </button>
+                
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header bg-danger text-white">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu de Acesso</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body d-flex flex-column gap-2">
+                        <a class="btn btn-outline-danger border-0 d-flex align-items-center justify-content-center" style="height: 50px;" href="purchases.html" >Minhas Compras</a>
+                        <a class="btn btn-outline-danger border-0 d-flex align-items-center justify-content-center" style="height: 50px;" href="alertPage.html" >Alertas</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h1 class="text-center border-bottom border-danger border-2 mb-4">Alerta de Preço</h1>
+            <form id="formulario" action="#" method="post">
+                <fieldset>
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label class="form-label" for="valor">Produto</label>
+                            <select class="form-select" aria-label="Default select example" required>
+                                <option disabled selected>Selecione um produto</option>
+                                <option value="1">Produto 1</option>
+                                <option value="2">Produto 2</option>
+                                <option value="3">Produto 3</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="juros">Valor Desejado</label>
+                            <input class="form-control" id="juros" name="juros" type="number" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="valor">Ação</label>
+                            <select class="form-select" aria-label="Default select example" required>
+                                <option disabled selected>Selecione uma ação</option>
+                                <option value="1">Notificar</option>
+                                <option value="2">Comprar</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12 d-flex justify-content-end">
+                            <button class="btn btn-success" type="button" onclick="calcular()">Criar Alerta</button>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <table class="table table-hover align-middle" id="tabela_produtos">
+                                <thead class="table-danger">
+                                    <tr>
+                                    <th scope="col">Produto</th>
+                                    <th scope="col">Valor Desejado</th>
+                                    <th scope="col">Ação</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table_alert">
+                                </tbody>
+                            </table>						
+                        </div>
+                    </div>				
+                </fieldset>
+            </form>
+        </div>
     </div>
     <script type="text/javascript" src="../js/bootstrap/bootstrap.js" ></script>
     <script type="text/javascript" src="../js/jQuery/jquery.js" ></script>

@@ -26,6 +26,8 @@ async function loadProdutos() {
     produtos.forEach((produto) => {
         adicionarLinha(produto);
     });
+
+    console.log(produtos)
 }
 
 /**
@@ -35,12 +37,14 @@ async function loadProdutos() {
 function adicionarLinha(produto) {
 	const novaLinha = document.createElement("tr");
 
+    localStorage.setItem("produtos", JSON.stringify(produto));
+
     novaLinha.innerHTML = 
     `
         <th scope="row">${produto.id}</th>
         <td>
             <div class="d-flex align-items-center gap-3">
-                <img src="${produto.urlImage || 'https://via.placeholder.com/60'}" alt="${produto.descricao}" class="rounded shadow-sm" width="60" height="60" style="object-fit: cover;">
+                <img src="${produto.urlImage}" alt="${produto.descricao}" class="rounded shadow-sm" width="60" height="60" style="object-fit: cover;">
                 <span>${produto.descricao}</span>
             </div>
         </td>

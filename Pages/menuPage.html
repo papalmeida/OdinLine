@@ -6,7 +6,7 @@
     <title>Menu</title>
     <link type="text/css" rel="stylesheet" href="../css/bootstrap/bootstrap.css">
 </head>
-<body>
+<body onload="loadProdutos()">
     <div>
         <nav id="navbar" class="navbar bg-danger px-3 mb-3" data-bs-theme="dark">
             <div class="container-fluid">
@@ -35,10 +35,9 @@
                 <table class="table table-hover align-middle" id="tabela_produtos">
                     <thead class="table-danger">
                         <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Produto</th>
-                        <th scope="col">Valor</th>
-                        <th scope="col"></th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Valor</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,9 +47,15 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-    <script type="text/javascript" src="../js/bootstrap/bootstrap.js" ></script>
-    <script type="text/javascript" src="../js/jQuery/jquery.js" ></script>
-    <script type="text/javascript" src="../js/pages/menuPage.js"></script>
+    <script src="../js/jQuery/jquery.js" ></script>
+    <script src="../js/jQuery/jquery.validate.min.js"></script>
+    <script src="../js/jQuery/jquery.mask.min.js"></script>
+
+    <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../js/bootstrap/bootstrap.js" ></script>
+    <script src="../js/utils/utils.js" ></script>
+    <script src="../js/pages/objects.js" ></script>
+    <script src="../js/pages/menuPage.js"></script>
+    <script src="../js/utils/monitorar.js" ></script>
 </body>
 </html>

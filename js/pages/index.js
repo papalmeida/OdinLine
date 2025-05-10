@@ -29,7 +29,7 @@ async function autenticar() {
             let usuario = await resposta.json();
 
             if(usuario.id > 0) {
-                localStorage.setItem('usuarioAutenticado', JSON.stringify(usuario));
+                localStorage.setItem('user', JSON.stringify(usuario));
                 window.location.href = "./pages/menuPage.html";
             } else {
                 alert("Usuário ou senha inválidos.")

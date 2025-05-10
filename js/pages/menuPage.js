@@ -25,6 +25,7 @@ async function loadProdutos() {
 
     produtos.forEach((produto) => {
         adicionarLinha(produto);
+        console.log("Produto:", produto);
     });
 
     console.log(produtos)
@@ -44,7 +45,7 @@ function adicionarLinha(produto) {
         <th scope="row">${produto.id}</th>
         <td>
             <div class="d-flex align-items-center gap-3">
-                <img src="${produto.urlImage}" alt="${produto.descricao}" class="rounded shadow-sm" width="60" height="60" style="object-fit: cover;">
+                <img src="${produto.urlImagem}" alt="${produto.descricao}" class="rounded shadow-sm" width="60" height="60" style="object-fit: cover;">
                 <span>${produto.descricao}</span>
             </div>
         </td>

@@ -3,7 +3,7 @@ class Produto {
         this.id = id;
         this.descricao = descricao;
         this.valor = valor;
-        this.urlImage = urlImage;
+        this.urlImagem = urlImage;
     }
 }
 

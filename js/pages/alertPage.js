@@ -1,6 +1,5 @@
 function loadProdutos() {
     const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
-    
     const listaProdutos = Array.isArray(produtos) ? produtos : [produtos];
     
     listaProdutos.forEach(produto => {

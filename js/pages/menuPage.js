@@ -23,12 +23,8 @@ async function loadProdutos() {
     const user = getUser();
     const produtos = await getProdutos(user);
 
-    produtos.forEach((produto) => {
-        adicionarLinha(produto);
-        console.log("Produto:", produto);
-    });
-
-    console.log(produtos)
+    produtos.forEach(adicionarLinha);
+    localStorage.setItem("produtos", JSON.stringify(produtos));
 }
 
 /**
@@ -37,8 +33,6 @@ async function loadProdutos() {
  */
 function adicionarLinha(produto) {
 	const novaLinha = document.createElement("tr");
-
-    localStorage.setItem("produtos", JSON.stringify(produto));
 
     novaLinha.innerHTML = 
     `
